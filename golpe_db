@@ -1,0 +1,15 @@
+CREATE DATABASE golpe_db
+
+CREATE TABLE `golpes` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(120) NOT NULL,
+  `cidade` varchar(120) NOT NULL,
+  `cpf` char(14) NOT NULL,
+  `meio_contato` enum('Telefone','WhatsApp','Email','SMS','Outros') NOT NULL,
+  `descricao` text NOT NULL,
+  `email_telefone` varchar(120) NOT NULL,
+  `empresa` varchar(120) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `empresa_id` int unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) 
