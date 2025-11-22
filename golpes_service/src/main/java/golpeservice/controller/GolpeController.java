@@ -1,9 +1,10 @@
-package Golpe_Service.controller;
+package golpeservice.controller;
 
 import java.util.List;
 
-import Golpe_Service.model.GolpeModel;
-import Golpe_Service.repository.GolpeRepository;
+
+import golpeservice.model.GolpeModel;
+import golpeservice.repository.GolpeRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,8 @@
-package com.Microservicos.Gateway_service;
+package com.microservicos.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class GatewayServiceApplication {

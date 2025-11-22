@@ -1,7 +1,8 @@
-package Golpe_Service.repository;
+package golpeservice.repository;
 
 
-import Golpe_Service.model.GolpeModel;
+
+import golpeservice.model.GolpeModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

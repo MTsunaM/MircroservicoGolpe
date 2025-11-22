@@ -1,4 +1,4 @@
-package com.Microservicos.Gateway_service.Config;
+package com.microservicos.gatewayservice.Config;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -15,7 +15,7 @@ public class GatewayConfig {
                         .uri("http://localhost:8082"))
                 .route("cadastro-goles",r -> r.path("/api/cadastrogolpes")
                         .uri("http://localhost:8081"))
-                .route("auth-login", r -> r.path("/auth/login")
+                .route("auth-login", r -> r.path("/api/auth/**")
                         .uri("http://localhost:8082"))
                 .build();
 

@@ -1,8 +1,9 @@
-package Golpe_Service.service;
+package golpeservice.service;
 
 
-import Golpe_Service.model.GolpeModel;
-import Golpe_Service.repository.GolpeRepository;
+
+import golpeservice.model.GolpeModel;
+import golpeservice.repository.GolpeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
