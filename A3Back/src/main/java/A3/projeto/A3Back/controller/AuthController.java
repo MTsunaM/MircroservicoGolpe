@@ -2,12 +2,11 @@ package A3.projeto.A3Back.controller;
 
 import A3.projeto.A3Back.DTO.AuthRequest;
 import A3.projeto.A3Back.Repository.EmpresaRepository;
-import A3.projeto.A3Back.Golpe_Service.repository.GolpeRepository;
 import A3.projeto.A3Back.model.EmpresaModel;
 import A3.projeto.A3Back.Security.JwtUtil;
-import A3.projeto.A3Back.Golpe_Service.model.GolpeModel;
 
-import java.util.List;
+
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,8 +22,7 @@ public class AuthController {
     @Autowired
     private EmpresaRepository empresaRepository;
 
-    @Autowired
-    private GolpeRepository golpeRepository;
+
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -56,13 +54,11 @@ public class AuthController {
         String token = jwtUtil.generateToken(emp.getUsuario(), Map.of("empresaId", emp.getId()));
         System.out.println(">>> [AuthController] Token gerado com sucesso para usuário: " + emp.getUsuario());
 
-        List<GolpeModel> golpes = golpeRepository.findByEmpresaIgnoreCase(emp.getUsuario());
-        System.out.println(">>> [AuthController] Golpes encontrados: " + golpes.size());
 
         Map<String, Object> response = new HashMap<>();
         response.put("token", token);
         response.put("empresa", emp.getUsuario());
-        response.put("golpes", golpes);
+
 
         return ResponseEntity.ok(response);
     }
