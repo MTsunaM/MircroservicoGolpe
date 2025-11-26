@@ -1,6 +1,7 @@
 package A3.projeto.A3Back.controller;
 
 import A3.projeto.A3Back.DTO.AuthRequest;
+import A3.projeto.A3Back.DTO.AuthResponse;
 import A3.projeto.A3Back.DTO.GolpeDTO;
 import A3.projeto.A3Back.Repository.EmpresaRepository;
 import A3.projeto.A3Back.config.JwtUtil;
@@ -287,47 +288,29 @@ class AuthControllerScamRetrievalPropertyTest {
         Assertions.assertEquals(200, response.getStatusCodeValue(),
                 "Authentication should succeed even when scam service fails with: " + failureType);
         
-        // Verify: Response body is a Map
+        // Verify: Response body is an AuthResponse
         Object body = response.getBody();
         Assertions.assertNotNull(body, "Response body should not be null");
-        Assertions.assertTrue(body instanceof Map, "Response body should be a Map");
+        Assertions.assertTrue(body instanceof AuthResponse, "Response body should be an AuthResponse");
         
-        @SuppressWarnings("unchecked")
-        Map<String, Object> responseMap = (Map<String, Object>) body;
+        AuthResponse authResponse = (AuthResponse) body;
         
         // Verify: Response contains all required fields
-        Assertions.assertTrue(responseMap.containsKey("token"),
+        Assertions.assertNotNull(authResponse.getToken(),
                 "Response should contain 'token' field even on scam service failure");
-        Assertions.assertTrue(responseMap.containsKey("empresa"),
+        Assertions.assertNotNull(authResponse.getEmpresa(),
                 "Response should contain 'empresa' field even on scam service failure");
-        Assertions.assertTrue(responseMap.containsKey("scamReports"),
+        Assertions.assertNotNull(authResponse.getScamReports(),
                 "Response should contain 'scamReports' field even on scam service failure");
         
         // Verify: Token is valid (non-empty)
-        Object token = responseMap.get("token");
-        Assertions.assertNotNull(token, "Token should not be null");
-        Assertions.assertTrue(token instanceof String, "Token should be a String");
-        Assertions.assertFalse(((String) token).isEmpty(), "Token should not be empty");
+        String token = authResponse.getToken();
+        Assertions.assertFalse(token.isEmpty(), "Token should not be empty");
         
         // Verify: ScamReports is an empty list (graceful degradation)
-        Object scamReportsField = responseMap.get("scamReports");
-        Assertions.assertNotNull(scamReportsField, "ScamReports field should not be null");
-        Assertions.assertTrue(scamReportsField instanceof List,
-                "ScamReports should be a List");
-        
-        @SuppressWarnings("unchecked")
-        List<?> scamReports = (List<?>) scamReportsField;
+        List<GolpeDTO> scamReports = authResponse.getScamReports();
         Assertions.assertTrue(scamReports.isEmpty(),
                 "ScamReports should be empty when scam service fails with: " + failureType);
-        
-        // Verify: No error information is exposed to the client
-        // The response should not contain any error fields or exception details
-        Assertions.assertFalse(responseMap.containsKey("error"),
-                "Response should not expose error details to client");
-        Assertions.assertFalse(responseMap.containsKey("exception"),
-                "Response should not expose exception details to client");
-        Assertions.assertFalse(responseMap.containsKey("message"),
-                "Response should not expose error message to client");
     }
 
     @Provide
@@ -407,37 +390,24 @@ class AuthControllerScamRetrievalPropertyTest {
         Assertions.assertEquals(200, response.getStatusCodeValue(),
                 "Authentication should succeed");
         
-        // Verify: Response body is a Map
+        // Verify: Response body is an AuthResponse
         Object body = response.getBody();
         Assertions.assertNotNull(body, "Response body should not be null");
-        Assertions.assertTrue(body instanceof Map, "Response body should be a Map");
+        Assertions.assertTrue(body instanceof AuthResponse, "Response body should be an AuthResponse");
         
-        @SuppressWarnings("unchecked")
-        Map<String, Object> responseMap = (Map<String, Object>) body;
+        AuthResponse authResponse = (AuthResponse) body;
         
-        // Verify: All field names follow camelCase convention
-        for (String fieldName : responseMap.keySet()) {
-            Assertions.assertTrue(isCamelCase(fieldName),
-                    "Field name '" + fieldName + "' should follow camelCase convention");
-        }
+        // Verify: All required fields are present and follow camelCase convention
+        // Field names: token, empresa, scamReports
+        Assertions.assertNotNull(authResponse.getToken(), "Response should contain 'token' field");
+        Assertions.assertNotNull(authResponse.getEmpresa(), "Response should contain 'empresa' field");
+        Assertions.assertNotNull(authResponse.getScamReports(), "Response should contain 'scamReports' field");
         
-        // Verify: Specific expected fields follow camelCase
-        Assertions.assertTrue(responseMap.containsKey("token"),
-                "Response should contain 'token' field in camelCase");
-        Assertions.assertTrue(responseMap.containsKey("empresa"),
-                "Response should contain 'empresa' field in camelCase");
-        Assertions.assertTrue(responseMap.containsKey("scamReports"),
-                "Response should contain 'scamReports' field in camelCase");
-        
-        // Verify: No fields use other naming conventions (snake_case, PascalCase, etc.)
-        for (String fieldName : responseMap.keySet()) {
-            Assertions.assertFalse(fieldName.contains("_"),
-                    "Field name '" + fieldName + "' should not use snake_case (contains underscore)");
-            Assertions.assertFalse(fieldName.contains("-"),
-                    "Field name '" + fieldName + "' should not use kebab-case (contains hyphen)");
-            Assertions.assertFalse(Character.isUpperCase(fieldName.charAt(0)),
-                    "Field name '" + fieldName + "' should not use PascalCase (starts with uppercase)");
-        }
+        // The field names in the AuthResponse class follow camelCase convention:
+        // - token (camelCase)
+        // - empresa (camelCase)
+        // - scamReports (camelCase)
+        // This is verified by the fact that the getters exist and work correctly
     }
 
     /**
@@ -539,46 +509,27 @@ class AuthControllerScamRetrievalPropertyTest {
         Assertions.assertEquals(200, response.getStatusCodeValue(),
                 "Authentication should succeed");
         
-        // Verify: Response body is a Map
+        // Verify: Response body is an AuthResponse
         Object body = response.getBody();
         Assertions.assertNotNull(body, "Response body should not be null");
-        Assertions.assertTrue(body instanceof Map, "Response body should be a Map");
+        Assertions.assertTrue(body instanceof AuthResponse, "Response body should be an AuthResponse");
         
-        @SuppressWarnings("unchecked")
-        Map<String, Object> responseMap = (Map<String, Object>) body;
-        
-        // Verify: Response contains exactly three fields
-        Assertions.assertEquals(3, responseMap.size(),
-                "Response should contain exactly three fields");
+        AuthResponse authResponse = (AuthResponse) body;
         
         // Verify: Response contains "token" field (non-empty string)
-        Assertions.assertTrue(responseMap.containsKey("token"),
-                "Response should contain 'token' field");
-        Object token = responseMap.get("token");
+        String token = authResponse.getToken();
         Assertions.assertNotNull(token, "Token should not be null");
-        Assertions.assertTrue(token instanceof String, "Token should be a String");
-        Assertions.assertFalse(((String) token).isEmpty(),
-                "Token should not be empty");
+        Assertions.assertFalse(token.isEmpty(), "Token should not be empty");
         
         // Verify: Response contains "empresa" field (matching username)
-        Assertions.assertTrue(responseMap.containsKey("empresa"),
-                "Response should contain 'empresa' field");
-        Object empresaField = responseMap.get("empresa");
+        String empresaField = authResponse.getEmpresa();
         Assertions.assertNotNull(empresaField, "Empresa field should not be null");
-        Assertions.assertTrue(empresaField instanceof String, "Empresa should be a String");
         Assertions.assertEquals(companyUsername.toUpperCase(), empresaField,
                 "Empresa field should match the authenticated company username");
         
         // Verify: Response contains "scamReports" field (array, possibly empty)
-        Assertions.assertTrue(responseMap.containsKey("scamReports"),
-                "Response should contain 'scamReports' field");
-        Object scamReportsField = responseMap.get("scamReports");
-        Assertions.assertNotNull(scamReportsField, "ScamReports field should not be null");
-        Assertions.assertTrue(scamReportsField instanceof List,
-                "ScamReports should be a List");
-        
-        @SuppressWarnings("unchecked")
-        List<GolpeDTO> returnedScamReports = (List<GolpeDTO>) scamReportsField;
+        List<GolpeDTO> returnedScamReports = authResponse.getScamReports();
+        Assertions.assertNotNull(returnedScamReports, "ScamReports field should not be null");
         Assertions.assertEquals(scamReports.size(), returnedScamReports.size(),
                 "ScamReports should contain the expected number of reports");
     }

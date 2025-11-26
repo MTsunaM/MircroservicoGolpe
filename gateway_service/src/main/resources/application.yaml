@@ -10,7 +10,7 @@ spring:
         - id: empresa-service
           uri: http://localhost:8082
           predicates:
-            - Path=/api/cadastroempresas,/api/auth/**,/api/empresas/**
+            - Path=/api/cadastroempresas,/api/auth/**,/api/empresas/**,/api/admin/**
         - id: golpe-service
           uri: http://localhost:8081
           predicates:

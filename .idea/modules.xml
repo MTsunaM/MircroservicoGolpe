@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/A3Back/empresa_service.iml" filepath="$PROJECT_DIR$/A3Back/empresa_service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway_service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/empresa_service/empresa_service.iml" filepath="$PROJECT_DIR$/empresa_service/empresa_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway_service/gateway_service.iml" filepath="$PROJECT_DIR$/gateway_service/gateway_service.iml" />
     </modules>
   </component>
 </project>

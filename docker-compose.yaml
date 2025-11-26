@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  # MySQL Database for Empresa Service
+  empresas-db:
+    image: mysql:8.0
+    container_name: empresas-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: empresas_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - empresas-data:/var/lib/mysql
+    networks:
+      - microservices-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  # MySQL Database for Golpes Service
+  golpes-db:
+    image: mysql:8.0
+    container_name: golpes-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: golpe_db
+    ports:
+      - "3308:3306"
+    volumes:
+      - golpes-data:/var/lib/mysql
+    networks:
+      - microservices-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  # Empresa Service
+  empresa-service:
+    build:
+      context: ./empresa_service
+      dockerfile: Dockerfile
+    container_name: empresa-service
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://empresas-db:3306/empresas_db?serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+      SCAM_SERVICE_BASE_URL: http://golpes-service:8081
+    depends_on:
+      empresas-db:
+        condition: service_healthy
+    networks:
+      - microservices-network
+
+  # Golpes Service
+  golpes-service:
+    build:
+      context: ./golpes_service
+      dockerfile: Dockerfile
+    container_name: golpes-service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://golpes-db:3306/golpe_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    depends_on:
+      golpes-db:
+        condition: service_healthy
+    networks:
+      - microservices-network
+
+  # Gateway Service
+  gateway-service:
+    build:
+      context: ./gateway_service
+      dockerfile: Dockerfile
+    container_name: gateway-service
+    ports:
+      - "8080:8080"
+    environment:
+      EMPRESA_SERVICE_URL: http://empresa-service:8082
+      GOLPES_SERVICE_URL: http://golpes-service:8081
+    depends_on:
+      - empresa-service
+      - golpes-service
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
+
+volumes:
+  empresas-data:
+  golpes-data:

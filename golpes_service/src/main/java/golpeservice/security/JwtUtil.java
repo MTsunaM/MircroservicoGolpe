@@ -33,6 +33,10 @@ public class JwtUtil {
         return (String) extractAllClaims(token).get("role");
     }
 
+    public Integer extractEmpresaId(String token) {
+        return (Integer) extractAllClaims(token).get("empresaId");
+    }
+
     public Claims extractAllClaims(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())

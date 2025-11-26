@@ -20,15 +20,21 @@ public class JwtUtil {
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    // Gera token com usuário e role
-    public String generateToken(String subject, String role) {
+    // Gera token com usuário, role e empresaId
+    public String generateToken(String subject, String role, Integer empresaId) {
         return Jwts.builder()
                 .setSubject(subject) // usuário
                 .claim("role", role) // EMPRESA ou ADMIN
+                .claim("empresaId", empresaId) // ID da empresa
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 3600000)) // 1h
                 .signWith(getSigningKey())
                 .compact();
+    }
+
+    // Sobrecarga para manter compatibilidade (sem empresaId)
+    public String generateToken(String subject, String role) {
+        return generateToken(subject, role, null);
     }
 
     // Valida token
@@ -59,6 +65,16 @@ public class JwtUtil {
                 .parseClaimsJws(token)
                 .getBody()
                 .get("role", String.class);
+    }
+
+    // Extrai o empresaId do token
+    public Integer getEmpresaId(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getSigningKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .get("empresaId", Integer.class);
     }
 
     // Se precisar acessar todos os claims

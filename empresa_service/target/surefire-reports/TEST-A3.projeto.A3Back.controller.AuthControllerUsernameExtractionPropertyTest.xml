@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="A3.projeto.A3Back.controller.AuthControllerUsernameExtractionPropertyTest" time="50.894" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service\target\test-classes;C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service\target\classes;C:\Users\rayan\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\rayan\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\rayan\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.6\spring-boot-starter-web-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.6\spring-boot-starter-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.6\spring-boot-starter-logging-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\rayan\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\rayan\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\rayan\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\rayan\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.6\spring-boot-starter-json-3.5.6.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.2\jackson-datatype-jdk8-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.2\jackson-datatype-jsr310-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.2\jackson-module-parameter-names-2.19.2.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.6\spring-boot-starter-tomcat-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.46\tomcat-embed-core-10.1.46.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.46\tomcat-embed-websocket-10.1.46.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-web\6.2.11\spring-web-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-beans\6.2.11\spring-beans-6.2.11.jar;C:\Users\rayan\.m2\repository\io\micrometer\micrometer-observation\1.15.4\micrometer-observation-1.15.4.jar;C:\Users\rayan\.m2\repository\io\micrometer\micrometer-commons\1.15.4\micrometer-commons-1.15.4.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-webmvc\6.2.11\spring-webmvc-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-context\6.2.11\spring-context-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-expression\6.2.11\spring-expression-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-devtools\3.5.6\spring-boot-devtools-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot\3.5.6\spring-boot-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.6\spring-boot-autoconfigure-3.5.6.jar;C:\Users\rayan\.m2\repository\com\mysql\mysql-connector-j\9.4.0\mysql-connector-j-9.4.0.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.6\spring-boot-starter-test-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-test\3.5.6\spring-boot-test-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.6\spring-boot-test-autoconfigure-3.5.6.jar;C:\Users\rayan\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\rayan\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\rayan\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\rayan\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\rayan\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\rayan\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\rayan\.m2\repository\org\assertj\assertj-core\3.27.4\assertj-core-3.27.4.jar;C:\Users\rayan\.m2\repository\net\bytebuddy\byte-buddy\1.17.7\byte-buddy-1.17.7.jar;C:\Users\rayan\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\rayan\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\rayan\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\rayan\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.7\byte-buddy-agent-1.17.7.jar;C:\Users\rayan\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\rayan\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\rayan\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\rayan\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-core\6.2.11\spring-core-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-jcl\6.2.11\spring-jcl-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-test\6.2.11\spring-test-6.2.11.jar;C:\Users\rayan\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.6\spring-boot-starter-security-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-aop\6.2.11\spring-aop-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-config\6.5.5\spring-security-config-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-core\6.5.5\spring-security-core-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-crypto\6.5.5\spring-security-crypto-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-web\6.5.5\spring-security-web-6.5.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.5.6\spring-boot-starter-data-jpa-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.6\spring-boot-starter-jdbc-3.5.6.jar;C:\Users\rayan\.m2\repository\com\zaxxer\HikariCP\6.3.3\HikariCP-6.3.3.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-jdbc\6.2.11\spring-jdbc-6.2.11.jar;C:\Users\rayan\.m2\repository\org\hibernate\orm\hibernate-core\6.6.29.Final\hibernate-core-6.6.29.Final.jar;C:\Users\rayan\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\rayan\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\rayan\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\rayan\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\rayan\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\rayan\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\rayan\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\rayan\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\rayan\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\rayan\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\rayan\.m2\repository\org\springframework\data\spring-data-jpa\3.5.4\spring-data-jpa-3.5.4.jar;C:\Users\rayan\.m2\repository\org\springframework\data\spring-data-commons\3.5.4\spring-data-commons-3.5.4.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-orm\6.2.11\spring-orm-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-tx\6.2.11\spring-tx-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-aspects\6.2.11\spring-aspects-6.2.11.jar;C:\Users\rayan\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.6\spring-boot-starter-validation-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.46\tomcat-embed-el-10.1.46.jar;C:\Users\rayan\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\rayan\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik\1.8.2\jqwik-1.8.2.jar;C:\Users\rayan\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-api\1.8.2\jqwik-api-1.8.2.jar;C:\Users\rayan\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rayan\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-web\1.8.2\jqwik-web-1.8.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-time\1.8.2\jqwik-time-1.8.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-engine\1.8.2\jqwik-engine-1.8.2.jar;C:\Users\rayan\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="APPLICATION_NAME" value="A3Back"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\rayan\AppData\Local\Temp\surefire12361478134578513711\surefirebooter-20251125193912596_3.jar C:\Users\rayan\AppData\Local\Temp\surefire12361478134578513711 2025-11-25T19-39-10_367-jvmRun1 surefire-20251125193912596_1tmp surefire_0-20251125193912596_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service\target\test-classes;C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service\target\classes;C:\Users\rayan\.m2\repository\ch\qos\logback\logback-core\1.5.19\logback-core-1.5.19.jar;C:\Users\rayan\.m2\repository\ch\qos\logback\logback-classic\1.5.19\logback-classic-1.5.19.jar;C:\Users\rayan\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.6\spring-boot-starter-web-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.6\spring-boot-starter-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.6\spring-boot-starter-logging-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\rayan\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\rayan\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\rayan\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\rayan\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.6\spring-boot-starter-json-3.5.6.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.2\jackson-datatype-jdk8-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.2\jackson-datatype-jsr310-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.2\jackson-module-parameter-names-2.19.2.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.6\spring-boot-starter-tomcat-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.46\tomcat-embed-core-10.1.46.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.46\tomcat-embed-websocket-10.1.46.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-web\6.2.11\spring-web-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-beans\6.2.11\spring-beans-6.2.11.jar;C:\Users\rayan\.m2\repository\io\micrometer\micrometer-observation\1.15.4\micrometer-observation-1.15.4.jar;C:\Users\rayan\.m2\repository\io\micrometer\micrometer-commons\1.15.4\micrometer-commons-1.15.4.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-webmvc\6.2.11\spring-webmvc-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-context\6.2.11\spring-context-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-expression\6.2.11\spring-expression-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-devtools\3.5.6\spring-boot-devtools-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot\3.5.6\spring-boot-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.6\spring-boot-autoconfigure-3.5.6.jar;C:\Users\rayan\.m2\repository\com\mysql\mysql-connector-j\9.4.0\mysql-connector-j-9.4.0.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.5.6\spring-boot-starter-test-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-test\3.5.6\spring-boot-test-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.5.6\spring-boot-test-autoconfigure-3.5.6.jar;C:\Users\rayan\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\rayan\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\rayan\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\rayan\.m2\repository\net\minidev\json-smart\2.5.2\json-smart-2.5.2.jar;C:\Users\rayan\.m2\repository\net\minidev\accessors-smart\2.5.2\accessors-smart-2.5.2.jar;C:\Users\rayan\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\rayan\.m2\repository\org\assertj\assertj-core\3.27.4\assertj-core-3.27.4.jar;C:\Users\rayan\.m2\repository\net\bytebuddy\byte-buddy\1.17.7\byte-buddy-1.17.7.jar;C:\Users\rayan\.m2\repository\org\awaitility\awaitility\4.2.2\awaitility-4.2.2.jar;C:\Users\rayan\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter\5.12.2\junit-jupiter-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.12.2\junit-jupiter-api-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.12.2\junit-jupiter-params-5.12.2.jar;C:\Users\rayan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.12.2\junit-jupiter-engine-5.12.2.jar;C:\Users\rayan\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar;C:\Users\rayan\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.7\byte-buddy-agent-1.17.7.jar;C:\Users\rayan\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\rayan\.m2\repository\org\mockito\mockito-junit-jupiter\5.17.0\mockito-junit-jupiter-5.17.0.jar;C:\Users\rayan\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\rayan\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-core\6.2.11\spring-core-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-jcl\6.2.11\spring-jcl-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-test\6.2.11\spring-test-6.2.11.jar;C:\Users\rayan\.m2\repository\org\xmlunit\xmlunit-core\2.10.4\xmlunit-core-2.10.4.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.5.6\spring-boot-starter-security-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-aop\6.2.11\spring-aop-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-config\6.5.5\spring-security-config-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-core\6.5.5\spring-security-core-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-crypto\6.5.5\spring-security-crypto-6.5.5.jar;C:\Users\rayan\.m2\repository\org\springframework\security\spring-security-web\6.5.5\spring-security-web-6.5.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\rayan\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\rayan\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.5.6\spring-boot-starter-data-jpa-3.5.6.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.5.6\spring-boot-starter-jdbc-3.5.6.jar;C:\Users\rayan\.m2\repository\com\zaxxer\HikariCP\6.3.3\HikariCP-6.3.3.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-jdbc\6.2.11\spring-jdbc-6.2.11.jar;C:\Users\rayan\.m2\repository\org\hibernate\orm\hibernate-core\6.6.29.Final\hibernate-core-6.6.29.Final.jar;C:\Users\rayan\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\rayan\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\rayan\.m2\repository\org\jboss\logging\jboss-logging\3.6.1.Final\jboss-logging-3.6.1.Final.jar;C:\Users\rayan\.m2\repository\org\hibernate\common\hibernate-commons-annotations\7.0.3.Final\hibernate-commons-annotations-7.0.3.Final.jar;C:\Users\rayan\.m2\repository\io\smallrye\jandex\3.2.0\jandex-3.2.0.jar;C:\Users\rayan\.m2\repository\com\fasterxml\classmate\1.7.0\classmate-1.7.0.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\rayan\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\rayan\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\rayan\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\rayan\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\rayan\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\rayan\.m2\repository\org\springframework\data\spring-data-jpa\3.5.4\spring-data-jpa-3.5.4.jar;C:\Users\rayan\.m2\repository\org\springframework\data\spring-data-commons\3.5.4\spring-data-commons-3.5.4.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-orm\6.2.11\spring-orm-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-tx\6.2.11\spring-tx-6.2.11.jar;C:\Users\rayan\.m2\repository\org\springframework\spring-aspects\6.2.11\spring-aspects-6.2.11.jar;C:\Users\rayan\.m2\repository\org\aspectj\aspectjweaver\1.9.24\aspectjweaver-1.9.24.jar;C:\Users\rayan\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.5.6\spring-boot-starter-validation-3.5.6.jar;C:\Users\rayan\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.46\tomcat-embed-el-10.1.46.jar;C:\Users\rayan\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.3.Final\hibernate-validator-8.0.3.Final.jar;C:\Users\rayan\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik\1.8.2\jqwik-1.8.2.jar;C:\Users\rayan\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-api\1.8.2\jqwik-api-1.8.2.jar;C:\Users\rayan\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\rayan\.m2\repository\org\junit\platform\junit-platform-commons\1.12.2\junit-platform-commons-1.12.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-web\1.8.2\jqwik-web-1.8.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-time\1.8.2\jqwik-time-1.8.2.jar;C:\Users\rayan\.m2\repository\net\jqwik\jqwik-engine\1.8.2\jqwik-engine-1.8.2.jar;C:\Users\rayan\.m2\repository\org\junit\platform\junit-platform-engine\1.12.2\junit-platform-engine-1.12.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\rayan"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\rayan\AppData\Local\Temp\surefire12361478134578513711\surefirebooter-20251125193912596_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.9+10-LTS"/>
+    <property name="user.name" value="rayan"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.9+10"/>
+    <property name="localRepository" value="C:\Users\rayan\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\rayan\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="java.version" value="21.0.9"/>
+    <property name="user.dir" value="C:\Users\rayan\OneDrive\Documents\MircroservicoGolpe\empresa_service"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="2472"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Program Files\Java\jdk-25\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\rayan\AppData\Local\Microsoft\WindowsApps;C:\Users\rayan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rayan\AppData\Local\Programs\IntelliJ IDEA 2025.2.4\bin;C:\Users\rayan\AppData\Roaming\npm;C:\Program Files\Common Files\Oracle\Java\bin;C:\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;C:\Users\rayan\AppData\Local\Programs\Kiro\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.9+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[A3Back] "/>
+  </properties>
+  <testcase name="usernameExtractionShouldUseAuthenticatedEmpresaUsernameNotRequestUsername" classname="AuthControllerUsernameExtractionPropertyTest" time="26.968">
+    <system-out><![CDATA[2025-11-25T19:42:19.076-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: yjko
+2025-11-25T19:42:19.206-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YJKO
+2025-11-25T19:42:19.344-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: uttsu
+2025-11-25T19:42:19.453-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UTTSU
+2025-11-25T19:42:19.608-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: nzotklmfhmtxzneo
+2025-11-25T19:42:20.186-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NZOTKLMFHMTXZNEO
+2025-11-25T19:42:20.336-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: SMVUEODLV
+2025-11-25T19:42:20.466-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SMVUEODLV
+2025-11-25T19:42:20.603-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: GEPJELGLOM
+2025-11-25T19:42:20.715-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GEPJELGLOM
+2025-11-25T19:42:20.932-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: XzGdFoIlKn
+2025-11-25T19:42:21.066-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XZGDFOILKN
+2025-11-25T19:42:21.189-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: qxwfwtzsrot
+2025-11-25T19:42:21.298-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: QXWFWTZSROT
+2025-11-25T19:42:21.416-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: bsqbyzt
+2025-11-25T19:42:21.563-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BSQBYZT
+2025-11-25T19:42:21.721-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: wfmafhvbufrvop
+2025-11-25T19:42:21.830-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WFMAFHVBUFRVOP
+2025-11-25T19:42:21.940-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: GbGuScVbBw
+2025-11-25T19:42:22.084-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GBGUSCVBBW
+2025-11-25T19:42:22.197-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: pxwoi
+2025-11-25T19:42:22.304-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PXWOI
+2025-11-25T19:42:22.414-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: BhVjOf
+2025-11-25T19:42:22.517-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BHVJOF
+2025-11-25T19:42:22.669-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: KMJ
+2025-11-25T19:42:22.794-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: KMJ
+2025-11-25T19:42:22.921-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LvPoWyEa
+2025-11-25T19:42:23.031-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LVPOWYEA
+2025-11-25T19:42:23.159-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: wlophpbkkjjat
+2025-11-25T19:42:23.269-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WLOPHPBKKJJAT
+2025-11-25T19:42:23.405-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aaa
+2025-11-25T19:42:23.508-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:23.650-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: CKGFXOZOP
+2025-11-25T19:42:23.750-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CKGFXOZOP
+2025-11-25T19:42:23.878-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZzUkOn
+2025-11-25T19:42:24.006-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZUKON
+2025-11-25T19:42:24.141-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AwYnFqTiBrRuKz
+2025-11-25T19:42:24.254-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AWYNFQTIBRRUKZ
+2025-11-25T19:42:24.362-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: VGBMDHSAG
+2025-11-25T19:42:24.509-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VGBMDHSAG
+2025-11-25T19:42:24.668-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AaA
+2025-11-25T19:42:24.795-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:24.936-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: WvSzLmCoK
+2025-11-25T19:42:25.147-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WVSZLMCOK
+2025-11-25T19:42:25.272-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ajlpkpwjngdeayyqg
+2025-11-25T19:42:25.380-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AJLPKPWJNGDEAYYQG
+2025-11-25T19:42:25.486-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EdSfQhKlUaX
+2025-11-25T19:42:25.593-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EDSFQHKLUAX
+2025-11-25T19:42:25.807-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: XzQ
+2025-11-25T19:42:25.930-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XZQ
+2025-11-25T19:42:26.066-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: VRGINQLW
+2025-11-25T19:42:26.196-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VRGINQLW
+2025-11-25T19:42:26.308-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: MRBTTDMAVZFXROTINJSA
+2025-11-25T19:42:26.420-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MRBTTDMAVZFXROTINJSA
+2025-11-25T19:42:26.535-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zzz
+2025-11-25T19:42:26.675-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:26.915-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: VqXfLsWbToHcJpRy
+2025-11-25T19:42:27.114-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VQXFLSWBTOHCJPRY
+2025-11-25T19:42:27.898-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LWYY
+2025-11-25T19:42:28.085-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LWYY
+2025-11-25T19:42:28.209-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: fuykxcjdklt
+2025-11-25T19:42:28.346-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: FUYKXCJDKLT
+2025-11-25T19:42:28.448-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ujcmmjkcamylt
+2025-11-25T19:42:28.562-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UJCMMJKCAMYLT
+2025-11-25T19:42:28.681-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: FGVCCCKLVH
+2025-11-25T19:42:28.873-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: FGVCCCKLVH
+2025-11-25T19:42:28.998-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: UrPdBeYiFkKv
+2025-11-25T19:42:29.097-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: URPDBEYIFKKV
+2025-11-25T19:42:29.209-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: WNRDMV
+2025-11-25T19:42:29.358-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WNRDMV
+2025-11-25T19:42:29.465-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: DcF
+2025-11-25T19:42:29.573-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: DCF
+2025-11-25T19:42:29.709-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: sphozvx
+2025-11-25T19:42:29.839-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SPHOZVX
+2025-11-25T19:42:29.964-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: koyjrmyowpvdbwecvnph
+2025-11-25T19:42:30.067-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: KOYJRMYOWPVDBWECVNPH
+2025-11-25T19:42:30.176-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aifzxwhmhvr
+2025-11-25T19:42:30.309-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AIFZXWHMHVR
+2025-11-25T19:42:30.418-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AaA
+2025-11-25T19:42:30.525-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:30.658-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZzZ
+2025-11-25T19:42:30.802-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:30.916-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: wjhoyxusohg
+2025-11-25T19:42:31.021-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WJHOYXUSOHG
+2025-11-25T19:42:31.128-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: kro
+2025-11-25T19:42:31.228-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: KRO
+2025-11-25T19:42:31.355-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aaa
+2025-11-25T19:42:31.465-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:31.602-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LyOp
+2025-11-25T19:42:31.777-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LYOP
+2025-11-25T19:42:31.959-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: IlJ
+2025-11-25T19:42:32.061-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ILJ
+2025-11-25T19:42:32.234-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: JoWyRbXhGqT
+2025-11-25T19:42:32.378-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: JOWYRBXHGQT
+2025-11-25T19:42:32.487-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: MUIQNCTHSXOQKVKWUA
+2025-11-25T19:42:32.588-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MUIQNCTHSXOQKVKWUA
+2025-11-25T19:42:32.709-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AAA
+2025-11-25T19:42:32.813-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:32.951-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: xvzwiunhjab
+2025-11-25T19:42:33.064-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XVZWIUNHJAB
+2025-11-25T19:42:33.181-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: WfXnM
+2025-11-25T19:42:33.323-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WFXNM
+2025-11-25T19:42:33.499-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: qtj
+2025-11-25T19:42:33.608-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: QTJ
+2025-11-25T19:42:33.748-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: YMOY
+2025-11-25T19:42:33.873-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YMOY
+2025-11-25T19:42:34.022-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: NDI
+2025-11-25T19:42:34.132-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NDI
+2025-11-25T19:42:34.250-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EcGlA
+2025-11-25T19:42:34.356-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ECGLA
+2025-11-25T19:42:34.513-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zemoxle
+2025-11-25T19:42:34.621-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZEMOXLE
+2025-11-25T19:42:34.745-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: FpSf
+2025-11-25T19:42:34.848-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: FPSF
+2025-11-25T19:42:34.970-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: atkpqppekohcxjqzfzq
+2025-11-25T19:42:35.073-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ATKPQPPEKOHCXJQZFZQ
+2025-11-25T19:42:35.199-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AkSmMwK
+2025-11-25T19:42:35.332-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AKSMMWK
+2025-11-25T19:42:35.501-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: RQOCHS
+2025-11-25T19:42:35.665-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RQOCHS
+2025-11-25T19:42:35.866-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EOHKGZD
+2025-11-25T19:42:36.017-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EOHKGZD
+2025-11-25T19:42:36.202-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: riywopi
+2025-11-25T19:42:36.331-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RIYWOPI
+2025-11-25T19:42:36.543-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: nvdjl
+2025-11-25T19:42:36.729-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NVDJL
+2025-11-25T19:42:36.857-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AaA
+2025-11-25T19:42:37.005-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:37.137-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZOYI
+2025-11-25T19:42:37.244-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZOYI
+2025-11-25T19:42:37.349-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: vzcivegjx
+2025-11-25T19:42:37.471-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VZCIVEGJX
+2025-11-25T19:42:37.583-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: SgSyGiDg
+2025-11-25T19:42:37.706-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SGSYGIDG
+2025-11-25T19:42:37.891-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LnXmOqRpDyHkSyErSaDv
+2025-11-25T19:42:38.047-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LNXMOQRPDYHKSYERSADV
+2025-11-25T19:42:38.167-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZZZ
+2025-11-25T19:42:38.275-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:38.385-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zzz
+2025-11-25T19:42:38.515-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:38.636-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: PGG
+2025-11-25T19:42:38.739-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PGG
+2025-11-25T19:42:38.848-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: RRGOUCZMTYZ
+2025-11-25T19:42:38.972-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RRGOUCZMTYZ
+2025-11-25T19:42:39.100-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: BBGKJMKTHQZ
+2025-11-25T19:42:39.206-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BBGKJMKTHQZ
+2025-11-25T19:42:39.311-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ABDUTI
+2025-11-25T19:42:39.416-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ABDUTI
+2025-11-25T19:42:39.543-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZzZ
+2025-11-25T19:42:39.703-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:39.808-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zrdxjrqs
+2025-11-25T19:42:39.927-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZRDXJRQS
+2025-11-25T19:42:40.046-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: HZFXWFOKJCQ
+2025-11-25T19:42:40.154-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HZFXWFOKJCQ
+2025-11-25T19:42:40.265-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: OHJFOKVQALEO
+2025-11-25T19:42:40.370-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: OHJFOKVQALEO
+2025-11-25T19:42:40.476-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LtJrRvNgJqT
+2025-11-25T19:42:40.595-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LTJRRVNGJQT
+2025-11-25T19:42:40.743-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: tjv
+2025-11-25T19:42:40.848-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TJV
+2025-11-25T19:42:40.962-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: NsBvAzMbO
+2025-11-25T19:42:41.090-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NSBVAZMBO
+2025-11-25T19:42:41.193-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZZZ
+2025-11-25T19:42:41.316-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:41.458-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: QVGCAXAO
+2025-11-25T19:42:41.589-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: QVGCAXAO
+2025-11-25T19:42:41.732-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TQBUSXQOVAAVNDEJYQKU
+2025-11-25T19:42:41.844-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TQBUSXQOVAAVNDEJYQKU
+2025-11-25T19:42:41.957-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: pewmyvowiaep
+2025-11-25T19:42:42.070-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PEWMYVOWIAEP
+2025-11-25T19:42:42.221-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LNACFROGCTVVU
+2025-11-25T19:42:42.317-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LNACFROGCTVVU
+2025-11-25T19:42:42.427-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: yyfapwa
+2025-11-25T19:42:42.528-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YYFAPWA
+2025-11-25T19:42:42.671-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: NkGwUoHd
+2025-11-25T19:42:42.782-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NKGWUOHD
+2025-11-25T19:42:42.886-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: WhFrEmHr
+2025-11-25T19:42:42.991-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WHFREMHR
+2025-11-25T19:42:43.132-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: VoMnZrQmBw
+2025-11-25T19:42:43.234-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VOMNZRQMBW
+2025-11-25T19:42:43.346-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: qwitizhzs
+2025-11-25T19:42:43.447-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: QWITIZHZS
+2025-11-25T19:42:43.599-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LjJdDq
+2025-11-25T19:42:43.703-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LJJDDQ
+2025-11-25T19:42:43.811-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: HBKQTQHRDGQ
+2025-11-25T19:42:43.914-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HBKQTQHRDGQ
+2025-11-25T19:42:44.010-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: GvAtF
+2025-11-25T19:42:44.135-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GVATF
+2025-11-25T19:42:44.469-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: nbxzehs
+2025-11-25T19:42:44.610-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NBXZEHS
+2025-11-25T19:42:44.719-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: sxlo
+2025-11-25T19:42:44.829-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SXLO
+2025-11-25T19:42:44.952-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: xfeqfjf
+2025-11-25T19:42:45.052-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XFEQFJF
+2025-11-25T19:42:45.175-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: FrKuUuFjGpZz
+2025-11-25T19:42:45.274-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: FRKUUUFJGPZZ
+2025-11-25T19:42:45.375-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: niasvdzk
+2025-11-25T19:42:45.508-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NIASVDZK
+2025-11-25T19:42:45.637-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: tmauoct
+2025-11-25T19:42:45.789-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TMAUOCT
+timestamp = 2025-11-25T19:42:45.800452900, AuthControllerUsernameExtractionPropertyTest:usernameExtractionShouldUseAuthenticatedEmpresaUsernameNotRequestUsername = 
+                              |-----------------------jqwik-----------------------
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 8          | # of all combined edge cases
+edge-cases#tried = 8          | # of edge cases tried in current run
+seed = 8136581193224398206    | random seed to reproduce generated values
+
+
+]]></system-out>
+  </testcase>
+  <testcase name="usernameFromAuthenticatedEmpresaShouldBeUsedForScamRetrieval" classname="AuthControllerUsernameExtractionPropertyTest" time="23.875">
+    <system-out><![CDATA[2025-11-25T19:42:45.958-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: QOHpFUh
+2025-11-25T19:42:46.060-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: QOHPFUH
+2025-11-25T19:42:46.164-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: LqqD
+2025-11-25T19:42:46.297-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LQQD
+2025-11-25T19:42:46.397-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: gCfvfompCcTZH
+2025-11-25T19:42:46.508-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GCFVFOMPCCTZH
+2025-11-25T19:42:46.614-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: pJsiCY
+2025-11-25T19:42:46.738-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PJSICY
+2025-11-25T19:42:46.843-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AAA
+2025-11-25T19:42:46.953-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:47.071-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZZZ
+2025-11-25T19:42:47.175-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:47.360-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: GTAxR
+2025-11-25T19:42:47.487-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GTAXR
+2025-11-25T19:42:47.665-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zzz
+2025-11-25T19:42:47.865-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:47.969-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: DVFgJHPCtZv
+2025-11-25T19:42:48.072-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: DVFGJHPCTZV
+2025-11-25T19:42:48.179-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: BQjNlBQq
+2025-11-25T19:42:48.343-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BQJNLBQQ
+2025-11-25T19:42:48.442-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aaa
+2025-11-25T19:42:48.543-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:48.677-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: cYNMRsA
+2025-11-25T19:42:48.800-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CYNMRSA
+2025-11-25T19:42:48.926-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: Mded
+2025-11-25T19:42:49.029-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MDED
+2025-11-25T19:42:49.137-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: YWU
+2025-11-25T19:42:49.240-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YWU
+2025-11-25T19:42:49.367-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: PTeR
+2025-11-25T19:42:49.485-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PTER
+2025-11-25T19:42:49.591-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: HBbQOiL
+2025-11-25T19:42:49.727-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HBBQOIL
+2025-11-25T19:42:49.894-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: oOfvbqizsRZz
+2025-11-25T19:42:50.004-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: OOFVBQIZSRZZ
+2025-11-25T19:42:50.148-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: pGsFWkpWkG
+2025-11-25T19:42:50.253-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: PGSFWKPWKG
+2025-11-25T19:42:50.374-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: rmIaYmMsnfZ
+2025-11-25T19:42:50.487-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RMIAYMMSNFZ
+2025-11-25T19:42:50.587-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: WkUh
+2025-11-25T19:42:50.697-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WKUH
+2025-11-25T19:42:50.825-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: GZeNuLFLGg
+2025-11-25T19:42:50.932-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GZENULFLGG
+2025-11-25T19:42:51.039-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TwOWKd
+2025-11-25T19:42:51.152-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TWOWKD
+2025-11-25T19:42:51.267-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ZZZ
+2025-11-25T19:42:51.389-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:51.491-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EgEfEKbjoxoTACGTdTVy
+2025-11-25T19:42:51.604-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EGEFEKBJOXOTACGTDTVY
+2025-11-25T19:42:51.722-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: sBPJEVeOi
+2025-11-25T19:42:51.838-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SBPJEVEOI
+2025-11-25T19:42:51.943-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TnokOGusYl
+2025-11-25T19:42:52.077-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TNOKOGUSYL
+2025-11-25T19:42:52.186-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: MnttVv
+2025-11-25T19:42:52.434-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MNTTVV
+2025-11-25T19:42:52.533-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: mfvom
+2025-11-25T19:42:52.677-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MFVOM
+2025-11-25T19:42:52.790-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: IPtEHIsMo
+2025-11-25T19:42:52.925-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: IPTEHISMO
+2025-11-25T19:42:53.094-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zzz
+2025-11-25T19:42:53.218-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZZZ
+2025-11-25T19:42:53.321-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aaa
+2025-11-25T19:42:53.475-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:53.582-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: RctydjgWyAyRnCbdf
+2025-11-25T19:42:53.734-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RCTYDJGWYAYRNCBDF
+2025-11-25T19:42:53.842-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: FqtLRBPBmMlk
+2025-11-25T19:42:53.967-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: FQTLRBPBMMLK
+2025-11-25T19:42:54.066-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ywaZuBtWanvUgsYYuhWe
+2025-11-25T19:42:54.178-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YWAZUBTWANVUGSYYUHWE
+2025-11-25T19:42:54.331-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ukcISt
+2025-11-25T19:42:54.439-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UKCIST
+2025-11-25T19:42:54.543-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: CFpuGOvab
+2025-11-25T19:42:54.649-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CFPUGOVAB
+2025-11-25T19:42:54.771-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: matTZtIWBsXmX
+2025-11-25T19:42:54.924-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MATTZTIWBSXMX
+2025-11-25T19:42:55.027-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: aaa
+2025-11-25T19:42:55.233-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:55.343-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TTPHklnAikEJSEwQRKai
+2025-11-25T19:42:55.473-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TTPHKLNAIKEJSEWQRKAI
+2025-11-25T19:42:55.577-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: emxLTGo
+2025-11-25T19:42:55.687-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EMXLTGO
+2025-11-25T19:42:55.790-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AAA
+2025-11-25T19:42:55.896-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AAA
+2025-11-25T19:42:56.015-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: wqGE
+2025-11-25T19:42:56.110-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: WQGE
+2025-11-25T19:42:56.243-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: gdE
+2025-11-25T19:42:56.380-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: GDE
+2025-11-25T19:42:56.492-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: nTNhfxHcUMtl
+2025-11-25T19:42:56.594-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NTNHFXHCUMTL
+2025-11-25T19:42:56.738-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: iiIaSwR
+2025-11-25T19:42:56.843-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: IIIASWR
+2025-11-25T19:42:56.985-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: UwKLiAnomRHb
+2025-11-25T19:42:57.081-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UWKLIANOMRHB
+2025-11-25T19:42:57.194-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: XPeZvsFwOPAI
+2025-11-25T19:42:57.303-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XPEZVSFWOPAI
+2025-11-25T19:42:57.404-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: vNg
+2025-11-25T19:42:57.525-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VNG
+2025-11-25T19:42:57.649-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zckHadZUDKLIGCcb
+2025-11-25T19:42:57.755-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZCKHADZUDKLIGCCB
+2025-11-25T19:42:57.852-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: hxwEPLZOWlqvWpwxle
+2025-11-25T19:42:57.974-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HXWEPLZOWLQVWPWXLE
+2025-11-25T19:42:58.080-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: nYiG
+2025-11-25T19:42:58.186-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NYIG
+2025-11-25T19:42:58.339-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: NsZ
+2025-11-25T19:42:58.460-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NSZ
+2025-11-25T19:42:58.587-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ueRrL
+2025-11-25T19:42:58.711-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UERRL
+2025-11-25T19:42:58.815-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: MbWQIBa
+2025-11-25T19:42:58.920-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MBWQIBA
+2025-11-25T19:42:59.042-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: UmQpjWaMZgiOVGBBouAB
+2025-11-25T19:42:59.146-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UMQPJWAMZGIOVGBBOUAB
+2025-11-25T19:42:59.253-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: AXovPvzMBjQi
+2025-11-25T19:42:59.364-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: AXOVPVZMBJQI
+2025-11-25T19:42:59.467-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: IrhBQcVoTe
+2025-11-25T19:42:59.615-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: IRHBQCVOTE
+2025-11-25T19:42:59.768-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: bZtehvdwyPw
+2025-11-25T19:42:59.863-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BZTEHVDWYPW
+2025-11-25T19:42:59.972-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: rzw
+2025-11-25T19:43:00.139-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: RZW
+2025-11-25T19:43:00.255-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: Setx
+2025-11-25T19:43:00.397-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SETX
+2025-11-25T19:43:00.505-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: xuX
+2025-11-25T19:43:00.629-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XUX
+2025-11-25T19:43:00.732-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: xBULbpxaOam
+2025-11-25T19:43:00.848-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XBULBPXAOAM
+2025-11-25T19:43:00.959-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: iFS
+2025-11-25T19:43:01.092-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: IFS
+2025-11-25T19:43:01.196-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: SUdVQqhzQViFHrAQXNPJ
+2025-11-25T19:43:01.300-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SUDVQQHZQVIFHRAQXNPJ
+2025-11-25T19:43:01.407-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ilReIXBi
+2025-11-25T19:43:01.514-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ILREIXBI
+2025-11-25T19:43:01.664-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: SNtVJPdGcgebEmKqWIVA
+2025-11-25T19:43:01.770-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: SNTVJPDGCGEBEMKQWIVA
+2025-11-25T19:43:01.896-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: VCBByqNGzxO
+2025-11-25T19:43:01.997-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VCBBYQNGZXO
+2025-11-25T19:43:02.121-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: XSKFxAFUIvFhfqfkrD
+2025-11-25T19:43:02.228-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XSKFXAFUIVFHFQFKRD
+2025-11-25T19:43:02.336-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: ElDlBKx
+2025-11-25T19:43:02.447-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ELDLBKX
+2025-11-25T19:43:02.545-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: zokzFLkJdtD
+2025-11-25T19:43:02.668-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ZOKZFLKJDTD
+2025-11-25T19:43:02.777-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: dDmmgHuAE
+2025-11-25T19:43:02.878-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: DDMMGHUAE
+2025-11-25T19:43:02.988-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: vcHfimTnwhK
+2025-11-25T19:43:03.108-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: VCHFIMTNWHK
+2025-11-25T19:43:03.216-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: XQCZWyMPHc
+2025-11-25T19:43:03.328-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: XQCZWYMPHC
+2025-11-25T19:43:03.449-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: bboTppREqn
+2025-11-25T19:43:03.594-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BBOTPPREQN
+2025-11-25T19:43:03.790-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EAoAqBcWZHBu
+2025-11-25T19:43:03.914-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EAOAQBCWZHBU
+2025-11-25T19:43:04.046-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: hXtQeOBlI
+2025-11-25T19:43:04.174-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HXTQEOBLI
+2025-11-25T19:43:04.281-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: UEWYChU
+2025-11-25T19:43:04.395-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: UEWYCHU
+2025-11-25T19:43:04.501-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: CvJ
+2025-11-25T19:43:04.604-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CVJ
+2025-11-25T19:43:04.757-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: OFbq
+2025-11-25T19:43:04.895-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: OFBQ
+2025-11-25T19:43:05.032-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TqNUrqxWOxD
+2025-11-25T19:43:05.139-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TQNURQXWOXD
+2025-11-25T19:43:05.336-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: cMZpMwywCmJ
+2025-11-25T19:43:05.440-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CMZPMWYWCMJ
+2025-11-25T19:43:05.557-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: cqUot
+2025-11-25T19:43:05.708-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CQUOT
+2025-11-25T19:43:05.820-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: hGN
+2025-11-25T19:43:05.928-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HGN
+2025-11-25T19:43:06.026-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: mVWCxOPUWk
+2025-11-25T19:43:06.143-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MVWCXOPUWK
+2025-11-25T19:43:06.283-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: mJFre
+2025-11-25T19:43:06.392-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: MJFRE
+2025-11-25T19:43:06.493-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: TIJ
+2025-11-25T19:43:06.592-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: TIJ
+2025-11-25T19:43:06.700-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: adWlSeEOG
+2025-11-25T19:43:06.831-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: ADWLSEEOG
+2025-11-25T19:43:06.926-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: CcJEEEv
+2025-11-25T19:43:07.033-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: CCJEEEV
+2025-11-25T19:43:07.145-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: KtjM
+2025-11-25T19:43:07.263-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: KTJM
+2025-11-25T19:43:07.373-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: EWzmIgzKPHWRESqCQqfU
+2025-11-25T19:43:07.473-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: EWZMIGZKPHWRESQCQQFU
+2025-11-25T19:43:07.589-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: yezyipePOwh
+2025-11-25T19:43:07.694-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: YEZYIPEPOWH
+2025-11-25T19:43:07.813-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: JrfW
+2025-11-25T19:43:07.913-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: JRFW
+2025-11-25T19:43:08.026-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: daeVvf
+2025-11-25T19:43:08.136-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: DAEVVF
+2025-11-25T19:43:08.238-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: lJD
+2025-11-25T19:43:08.361-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LJD
+2025-11-25T19:43:08.464-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: hPYYUGJ
+2025-11-25T19:43:08.570-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: HPYYUGJ
+2025-11-25T19:43:08.681-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: oBHFOwjLYsvo
+2025-11-25T19:43:08.816-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: OBHFOWJLYSVO
+2025-11-25T19:43:08.930-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: NVEdaQPKkpiCrRwnsmQW
+2025-11-25T19:43:09.031-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: NVEDAQPKKPICRRWNSMQW
+2025-11-25T19:43:09.142-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: lZzQZEE
+2025-11-25T19:43:09.244-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: LZZQZEE
+2025-11-25T19:43:09.362-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: khcKf
+2025-11-25T19:43:09.463-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: KHCKF
+2025-11-25T19:43:09.568-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : Login attempt for user: BWPtCPz
+2025-11-25T19:43:09.672-03:00  INFO 2472 --- [A3Back] [           main] A.p.A3Back.controller.AuthController     : JWT token generated successfully for user: BWPTCPZ
+timestamp = 2025-11-25T19:43:09.675560, AuthControllerUsernameExtractionPropertyTest:usernameFromAuthenticatedEmpresaShouldBeUsedForScamRetrieval = 
+                              |-----------------------jqwik-----------------------
+tries = 100                   | # of calls to property
+checks = 100                  | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = SAMPLE_FIRST  | try previously failed sample, then previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 4          | # of all combined edge cases
+edge-cases#tried = 4          | # of edge cases tried in current run
+seed = -5845561422705375288   | random seed to reproduce generated values
+
+
+]]></system-out>
+  </testcase>
+</testsuite>

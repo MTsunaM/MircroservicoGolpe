@@ -28,15 +28,24 @@ public class GolpeController {
     // 📌 Cadastro de golpes (somente EMPRESA pode registrar)
     @PreAuthorize("hasRole('EMPRESA')")
     @PostMapping
-    public ResponseEntity<?> cadastrarGolpe(@RequestBody GolpeModel golpe) {
-        if (golpe.getEmpresaId() == null) {
-            return ResponseEntity.badRequest().body("O ID da empresa é obrigatório");
+    public ResponseEntity<?> cadastrarGolpe(@RequestBody GolpeModel golpe, 
+                                           jakarta.servlet.http.HttpServletRequest request) {
+        // Extract empresaId from JWT token (stored in request by JwtAuthFilter)
+        Integer empresaId = (Integer) request.getAttribute("empresaId");
+        
+        if (empresaId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Não foi possível identificar a empresa. Token inválido.");
         }
+        
         if (golpe.getEmpresa() == null || golpe.getEmpresa().trim().isEmpty()) {
             return ResponseEntity.badRequest().body("O nome da empresa é obrigatório");
         }
 
+        // Set empresaId from token (ignore any value sent in request body)
+        golpe.setEmpresaId(empresaId);
         golpe.setEmpresa(golpe.getEmpresa().trim().toUpperCase());
+        
         GolpeModel salvo = golpeRepository.save(golpe);
         return ResponseEntity.ok(salvo);
     }

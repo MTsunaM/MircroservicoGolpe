@@ -22,7 +22,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Public endpoints (no authentication required)
                         .requestMatchers("/api/golpes/health").permitAll()
+                        .requestMatchers("/api/cadastrogolpes/**").permitAll() // Public scam registration
+                        // Protected endpoints (authentication required)
                         .requestMatchers("/api/golpes/**").authenticated()
                         .anyRequest().permitAll()
                 )

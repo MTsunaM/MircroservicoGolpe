@@ -46,10 +46,10 @@ public class GolpeModel {
     @Column(name = "email_telefone", length = 120, nullable = false)
     private String emailOuTelefone;
 
-    @Column(name = "empresa_id", nullable = false)
+    @Column(name = "empresa_id", nullable = true)
     private Integer empresaId;
 
-    @Column(nullable = false, length = 120)
+    @Column(nullable = true, length = 120)
     private String empresa;
 
     @CreationTimestamp

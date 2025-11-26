@@ -47,9 +47,9 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciais inválidas");
         }
 
-        // Gera token com usuário e role
-        String token = jwtUtil.generateToken(emp.getUsuario(), emp.getRole().name());
-        logger.info("JWT token generated successfully for user: {}", emp.getUsuario());
+        // Gera token com usuário, role e empresaId
+        String token = jwtUtil.generateToken(emp.getUsuario(), emp.getRole().name(), emp.getId());
+        logger.info("JWT token generated successfully for user: {} with empresaId: {}", emp.getUsuario(), emp.getId());
 
         // Recupera golpes relacionados à empresa (se for EMPRESA)
         List<GolpeDTO> scamReports = Collections.emptyList();
@@ -60,7 +60,7 @@ public class AuthController {
                     emp.getUsuario(), e.getMessage(), e);
         }
 
-        AuthResponse response = new AuthResponse(token, emp.getUsuario(), emp.getRole().name());
+        AuthResponse response = new AuthResponse(token, emp.getUsuario(), scamReports);
         return ResponseEntity.ok(response);
 
 

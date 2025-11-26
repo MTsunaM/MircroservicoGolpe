@@ -38,14 +38,23 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
                 String username = jwtUtil.extractUsername(token);
                 String role = jwtUtil.extractRole(token);
+                Integer empresaId = jwtUtil.extractEmpresaId(token);
                 
                 System.out.println(">>> [JwtAuthFilter] Extracted username: " + username);
                 System.out.println(">>> [JwtAuthFilter] Extracted role: " + role);
+                System.out.println(">>> [JwtAuthFilter] Extracted empresaId: " + empresaId);
 
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     UsernamePasswordAuthenticationToken authToken =
                             new UsernamePasswordAuthenticationToken(username, null, jwtUtil.getAuthorities(role));
-                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    
+                    // Store empresaId in authentication details
+                    var details = new WebAuthenticationDetailsSource().buildDetails(request);
+                    authToken.setDetails(details);
+                    
+                    // Store empresaId as an attribute in the request for easy access
+                    request.setAttribute("empresaId", empresaId);
+                    
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                     
                     System.out.println(">>> [JwtAuthFilter] Authentication set successfully");
