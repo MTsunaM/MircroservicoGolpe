@@ -21,9 +21,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable()) // CORS handled by gateway
                 .authorizeHttpRequests(auth -> auth
                         // Public endpoints (no authentication required)
                         .requestMatchers("/api/golpes/health").permitAll()
+                        .requestMatchers("/api/golpes/ranking").permitAll() // Public ranking
                         .requestMatchers("/api/cadastrogolpes/**").permitAll() // Public scam registration
                         // Protected endpoints (authentication required)
                         .requestMatchers("/api/golpes/**").authenticated()

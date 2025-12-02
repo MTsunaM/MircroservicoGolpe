@@ -14,17 +14,4 @@ spring:
         - id: golpe-service
           uri: http://localhost:8081
           predicates:
-            - Path=/api/cadastrogolpes,/api/golpes/**,/api/empresa/**
-
-
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - OPTIONS
-            allowedHeaders: "*"
+            - Path=/api/cadastrogolpes/**,/api/golpes/**,/api/empresa/**

@@ -71,7 +71,20 @@ public class GolpeController {
     @PreAuthorize("hasAnyRole('EMPRESA','ADMIN')")
     @GetMapping("/empresa/{nome}")
     public List<GolpeModel> listarPorEmpresa(@PathVariable String nome) {
-        return golpeRepository.findByEmpresaIgnoreCase(nome.trim().toUpperCase());
+        System.out.println(">>> [GolpeController] Buscando golpes para empresa (exato): " + nome);
+        List<GolpeModel> result = golpeRepository.findByEmpresaIgnoreCase(nome.trim().toUpperCase());
+        System.out.println(">>> [GolpeController] Encontrados " + result.size() + " golpes");
+        return result;
+    }
+
+    // 📌 Buscar golpes por nome da empresa (busca parcial/LIKE)
+    @PreAuthorize("hasAnyRole('EMPRESA','ADMIN')")
+    @GetMapping("/empresa/buscar/{nome}")
+    public List<GolpeModel> buscarPorEmpresa(@PathVariable String nome) {
+        System.out.println(">>> [GolpeController] Buscando golpes para empresa (parcial): " + nome);
+        List<GolpeModel> result = golpeRepository.findByEmpresaContainingIgnoreCase(nome.trim());
+        System.out.println(">>> [GolpeController] Encontrados " + result.size() + " golpes");
+        return result;
     }
 
     // 📌 Buscar golpes por ID da empresa
@@ -79,6 +92,42 @@ public class GolpeController {
     @GetMapping("/empresa/id/{empresaId}")
     public List<GolpeModel> listarPorEmpresaId(@PathVariable Integer empresaId) {
         return golpeRepository.findByEmpresaId(empresaId);
+    }
+
+    // 📌 Ranking de empresas com mais golpes (público)
+    @GetMapping("/ranking")
+    public ResponseEntity<?> rankingEmpresas() {
+        try {
+            System.out.println(">>> [GolpeController] Buscando ranking de empresas");
+            List<GolpeModel> golpes = golpeRepository.findAll();
+            
+            // Agrupa por empresa e conta
+            java.util.Map<String, Long> ranking = golpes.stream()
+                .filter(g -> g.getEmpresa() != null && !g.getEmpresa().isEmpty())
+                .collect(java.util.stream.Collectors.groupingBy(
+                    GolpeModel::getEmpresa,
+                    java.util.stream.Collectors.counting()
+                ));
+            
+            // Converte para lista e ordena
+            java.util.List<java.util.Map<String, Object>> rankingList = ranking.entrySet().stream()
+                .map(entry -> {
+                    java.util.Map<String, Object> item = new java.util.HashMap<>();
+                    item.put("empresa", entry.getKey());
+                    item.put("count", entry.getValue());
+                    return item;
+                })
+                .sorted((a, b) -> Long.compare((Long)b.get("count"), (Long)a.get("count")))
+                .collect(java.util.stream.Collectors.toList());
+            
+            System.out.println(">>> [GolpeController] Ranking gerado com " + rankingList.size() + " empresas");
+            return ResponseEntity.ok(rankingList);
+        } catch (Exception e) {
+            System.err.println(">>> [GolpeController] Erro ao gerar ranking: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Erro ao gerar ranking: " + e.getMessage());
+        }
     }
 
     // ✏️ Atualizar golpe (somente ADMIN)

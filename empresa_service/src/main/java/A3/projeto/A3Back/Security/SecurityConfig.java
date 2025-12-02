@@ -37,7 +37,7 @@ public class SecurityConfig {
                 }, UsernamePasswordAuthenticationFilter.class)
 
                 .csrf(csrf -> csrf.disable())
-                .cors(cors -> {})
+                .cors(cors -> cors.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         // Endpoints públicos
@@ -55,6 +55,5 @@ public class SecurityConfig {
 
         return http.build();
     }
-
 
 }

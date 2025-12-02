@@ -20,12 +20,7 @@ public class ScamReportController {
     @Autowired
     private ScamRetrievalService scamRetrievalService;
 
-    /**
-     * Retrieves all scam reports for the logged-in user's company.
-     * Uses the authenticated username to find the company and retrieve associated scam reports.
-     * 
-     * @return list of scam reports (GolpeDTO) without CPF data
-     */
+
     @GetMapping("/my-company")
     public ResponseEntity<List<GolpeDTO>> getScamReportsForMyCompany() {
         // Get the authenticated username from Spring Security context

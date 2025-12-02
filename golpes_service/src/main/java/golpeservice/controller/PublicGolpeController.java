@@ -50,4 +50,40 @@ public class PublicGolpeController {
         System.out.println(">>> [PublicGolpeController] Public scam registered with ID: " + salvo.getId());
         return ResponseEntity.ok(salvo);
     }
+
+    // 📌 Public ranking endpoint (no authentication required)
+    @GetMapping("/ranking")
+    public ResponseEntity<?> rankingEmpresas() {
+        try {
+            System.out.println(">>> [PublicGolpeController] Buscando ranking de empresas");
+            java.util.List<GolpeModel> golpes = golpeRepository.findAll();
+            
+            // Agrupa por empresa e conta
+            java.util.Map<String, Long> ranking = golpes.stream()
+                .filter(g -> g.getEmpresa() != null && !g.getEmpresa().isEmpty())
+                .collect(java.util.stream.Collectors.groupingBy(
+                    GolpeModel::getEmpresa,
+                    java.util.stream.Collectors.counting()
+                ));
+            
+            // Converte para lista e ordena
+            java.util.List<java.util.Map<String, Object>> rankingList = ranking.entrySet().stream()
+                .map(entry -> {
+                    java.util.Map<String, Object> item = new java.util.HashMap<>();
+                    item.put("empresa", entry.getKey());
+                    item.put("count", entry.getValue());
+                    return item;
+                })
+                .sorted((a, b) -> Long.compare((Long)b.get("count"), (Long)a.get("count")))
+                .collect(java.util.stream.Collectors.toList());
+            
+            System.out.println(">>> [PublicGolpeController] Ranking gerado com " + rankingList.size() + " empresas");
+            return ResponseEntity.ok(rankingList);
+        } catch (Exception e) {
+            System.err.println(">>> [PublicGolpeController] Erro ao gerar ranking: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Erro ao gerar ranking: " + e.getMessage());
+        }
+    }
 }
